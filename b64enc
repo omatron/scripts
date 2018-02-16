@@ -1,0 +1,11 @@
+#!/bin/bash
+ 
+ test -z $1  2> /dev/null
+ 
+ if [ $? -eq 1 ]; then
+ 
+         echo -n "$1" | base64 
+ else
+         read -p "INSERT: " INS
+         echo -n "$INS" | base64 
+ fi
